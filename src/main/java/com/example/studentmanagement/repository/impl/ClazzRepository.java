@@ -3,6 +3,7 @@ package com.example.studentmanagement.repository.impl;
 import com.example.dto.StudentDTO;
 import com.example.studentmanagement.model.Clazz;
 import com.example.studentmanagement.repository.IClazzRepository;
+import org.springframework.stereotype.Repository;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -10,6 +11,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class ClazzRepository implements IClazzRepository {
     @Override
     public List<Clazz> findAll() {
