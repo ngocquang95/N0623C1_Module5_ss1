@@ -4,6 +4,8 @@ import com.example.dto.StudentDTO;
 import com.example.dto.StudentSearchDTO;
 import com.example.studentmanagement.model.Student;
 import com.example.studentmanagement.repository.IStudentRepository;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Repository;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,6 +13,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class StudentRepository implements IStudentRepository {
 
     @Override

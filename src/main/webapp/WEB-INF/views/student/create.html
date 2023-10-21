@@ -6,25 +6,25 @@
 </head>
 <body>
 <div class="container">
-    <form action="/student/create" method="post">
+    <form action="/student/create" method="post" th:object="${studentCreateDTO}">
         <div class="mb-3">
-            <label for="name" class="form-label">Tên</label>
-            <input type="text" th:value="${studentCreateDTO?.name}" class="form-control" id="name" name="name">
-            <p class="text-danger" th:text="${messageError?.get('name')}"></p>
+            <label th:for="name" class="form-label">Tên</label>
+            <input type="text" class="form-control" th:field="*{name}">
+            <p class="text-danger" th:errors="*{name}"></p>
         </div>
         <div class="mb-3">
-            <label for="score" class="form-label">Điểm</label>
-            <input type="text" th:value="${studentCreateDTO?.score}" class="form-control" id="score" name="score">
-            <p class="text-danger" th:text="${messageError?.get('score')}"></p>
+            <label th:for="score" class="form-label">Điểm</label>
+            <input type="text" class="form-control" th:field="*{score}">
+            <p class="text-danger" th:errors="*{score}"></p>
         </div>
         <div class="mb-3">
-            <label for="clazzId" class="form-label">Lớp</label>
-            <select class="form-select" id="clazzId" name="clazzId">
+            <label th:for="clazzId" class="form-label">Lớp</label>
+            <select class="form-select" th:field="*{clazzId}">
                 <option value="">Chọn lớp</option>
-                <option th:selected="${#strings.toString(clazz.id) == studentCreateDTO?.clazzId}" th:each="clazz: ${clazzList}"
+                <option th:each="clazz: ${clazzList}"
                         th:value="${clazz.id}" th:text="${clazz.name}">Chọn lớp</option>
             </select>
-            <p class="text-danger" th:text="${messageError?.get('clazzId')}"></p>
+            <p class="text-danger"  th:errors="*{clazzId}"></p>
         </div>
         <button type="submit" class="btn btn-primary">Lưu</button>
     </form>
