@@ -1,4 +1,4 @@
-package com.example.dto;
+package com.example.studentmanagement.dto;
 
 public class StudentSearchDTO {
     private String name;

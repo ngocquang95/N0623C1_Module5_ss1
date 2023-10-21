@@ -1,17 +1,14 @@
 package com.example.studentmanagement.service.impl;
 
-import com.example.dto.StudentCreateDTO;
-import com.example.dto.StudentDTO;
-import com.example.dto.StudentSearchDTO;
+import com.example.studentmanagement.dto.StudentDTO;
+import com.example.studentmanagement.dto.StudentSearchDTO;
 import com.example.studentmanagement.model.Student;
 import com.example.studentmanagement.repository.IStudentRepository;
-import com.example.studentmanagement.repository.impl.StudentRepository;
 import com.example.studentmanagement.service.IStudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Map;
 
 @Service("studentService")
 public class StudentService implements IStudentService {

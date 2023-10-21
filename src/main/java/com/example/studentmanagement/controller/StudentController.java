@@ -1,13 +1,12 @@
 package com.example.studentmanagement.controller;
 
-import com.example.dto.StudentCreateDTO;
-import com.example.dto.StudentSearchDTO;
-import com.example.mapper.StudentMapper;
+import com.example.studentmanagement.dto.StudentCreateDTO;
+import com.example.studentmanagement.dto.StudentSearchDTO;
+import com.example.studentmanagement.mapper.StudentMapper;
 import com.example.studentmanagement.model.Clazz;
 import com.example.studentmanagement.model.Student;
 import com.example.studentmanagement.service.IClazzService;
 import com.example.studentmanagement.service.IStudentService;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;

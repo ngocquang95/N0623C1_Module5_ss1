@@ -1,6 +1,5 @@
 package com.example.studentmanagement.repository.impl;
 
-import com.example.dto.StudentDTO;
 import com.example.studentmanagement.model.Clazz;
 import com.example.studentmanagement.repository.IClazzRepository;
 import org.springframework.stereotype.Repository;

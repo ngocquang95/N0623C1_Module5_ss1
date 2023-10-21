@@ -1,6 +1,6 @@
-package com.example.mapper;
+package com.example.studentmanagement.mapper;
 
-import com.example.dto.StudentCreateDTO;
+import com.example.studentmanagement.dto.StudentCreateDTO;
 import com.example.studentmanagement.model.Student;
 import org.mapstruct.Mapper;
 import org.springframework.stereotype.Component;

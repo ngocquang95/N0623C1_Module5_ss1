@@ -1,4 +1,4 @@
-package com.example.dto;
+package com.example.studentmanagement.dto;
 
 import org.hibernate.validator.constraints.Length;
 import org.springframework.validation.Errors;
