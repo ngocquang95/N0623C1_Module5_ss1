@@ -7,7 +7,7 @@ import com.example.studentmanagement.model.Student;
 import java.util.List;
 
 public interface IStudentRepository {
-    List<StudentDTO> search(StudentSearchDTO studentSearchDTO);
+    List<Student> search(StudentSearchDTO studentSearchDTO);
 
     Student findById(int id);
 

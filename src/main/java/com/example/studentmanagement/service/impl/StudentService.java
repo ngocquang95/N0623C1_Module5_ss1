@@ -16,7 +16,7 @@ public class StudentService implements IStudentService {
     private IStudentRepository studentRepository;
 
     @Override
-    public List<StudentDTO> search(StudentSearchDTO studentSearchDTO) {
+    public List<Student> search(StudentSearchDTO studentSearchDTO) {
         // Tránh trường hợp người dùng đi vào màn hình list (Chưa search)
         if(studentSearchDTO.getName() == null) {
             studentSearchDTO.setName("");

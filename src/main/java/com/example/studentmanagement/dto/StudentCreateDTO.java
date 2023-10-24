@@ -1,9 +1,11 @@
 package com.example.studentmanagement.dto;
 
+import com.example.studentmanagement.model.Clazz;
 import org.hibernate.validator.constraints.Length;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
@@ -16,8 +18,8 @@ public class StudentCreateDTO implements Validator {
     @NotBlank(message = "Điểm không được để trống")
     private String score;
 
-    @NotBlank(message = "Phải chọn lớp")
-    private String clazzId;
+    @Valid
+    private Clazz clazz;
 
     public String getName() {
         return name;
@@ -35,12 +37,12 @@ public class StudentCreateDTO implements Validator {
         this.score = score;
     }
 
-    public String getClazzId() {
-        return clazzId;
+    public Clazz getClazz() {
+        return clazz;
     }
 
-    public void setClazzId(String clazzId) {
-        this.clazzId = clazzId;
+    public void setClazz(Clazz clazz) {
+        this.clazz = clazz;
     }
 
     @Override

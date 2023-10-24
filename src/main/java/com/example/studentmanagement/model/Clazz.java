@@ -1,22 +1,32 @@
 package com.example.studentmanagement.model;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+
+@Entity
 public class Clazz {
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id") // Tên cho cột ở trong table
+    @NotNull(message = "Phải chọn lớp")
+    private Integer id;
+
+    @Column(name = "name")
     private String name;
 
     public Clazz() {
     }
 
-    public Clazz(int id, String name) {
+    public Clazz(Integer id, String name) {
         this.id = id;
         this.name = name;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

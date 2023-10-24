@@ -7,7 +7,7 @@ import com.example.studentmanagement.model.Student;
 import java.util.List;
 
 public interface IStudentService {
-    List<StudentDTO> search(StudentSearchDTO studentSearchDTO);
+    List<Student> search(StudentSearchDTO studentSearchDTO);
 
     Student findById(int id);
 

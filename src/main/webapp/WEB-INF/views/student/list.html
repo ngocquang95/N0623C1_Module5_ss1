@@ -57,7 +57,7 @@
                     <p th:if="${student.score >= 5 && student.score < 7}">Bình thường</p>
                     <p th:if="${student.score >= 7}" class="text-info">Tốt</p>
                 </td>
-                <td th:text="${student.clazzName}">${student.clazzName}</td>
+                <td th:text="${student.clazz?.name}">${student.clazzName}</td>
                 <td><a href="student/edit?id=${student.id}" class="btn btn-info">Chỉnh sửa</a></td>
             </tr>
         </tbody>

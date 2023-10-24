@@ -2,6 +2,7 @@ package com.example.studentmanagement.repository.impl;
 
 import com.example.studentmanagement.model.Clazz;
 import com.example.studentmanagement.repository.IClazzRepository;
+import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 
 import java.sql.PreparedStatement;
@@ -14,26 +15,19 @@ import java.util.List;
 public class ClazzRepository implements IClazzRepository {
     @Override
     public List<Clazz> findAll() {
-        List<Clazz> clazzList = new ArrayList<>();
+        // Bước 1: Mở phiên làm việc (Session) từ ConnectionUtil
+        Session session = ConnectionUtil.sessionFactory.openSession();
+        List<Clazz> clazzList = null;
         try {
-            PreparedStatement preparedStatement = BaseRepository.getConnection().prepareStatement(
-                    "select id, name from clazz;"
-            );
-
-            ResultSet resultSet = preparedStatement.executeQuery();
-
-            Clazz clazz;
-            while (resultSet.next()) {
-                clazz = new Clazz();
-                clazz.setId(resultSet.getInt("id"));
-                clazz.setName(resultSet.getString("name"));
-
-                clazzList.add(clazz);
-            }
-        } catch (SQLException e) {
+            // HQL
+            //My-SQL
+            // Bước 2: Sử dụng HQL để lấy danh sách sinh viên
+            clazzList = session.createQuery("FROM Clazz").getResultList();
+        } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            session.close(); // Bước 3: Đóng phiên làm việc sau khi lấy danh sách xong
         }
-
         return clazzList;
     }
 }

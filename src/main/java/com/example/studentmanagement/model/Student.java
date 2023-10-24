@@ -1,19 +1,32 @@
 package com.example.studentmanagement.model;
 
+import javax.persistence.*;
+
+@Entity
 public class Student {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id") // Tên cho cột ở trong table
     private int id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "score")
     private double score;
-    private int clazzId;
+
+    @ManyToOne
+    @JoinColumn(name = "clazz_id")
+    private Clazz clazz;
 
     public Student() {
     }
 
-    public Student(int id, String name, double score, int clazzId) {
+    public Student(int id, String name, double score, Clazz clazz) {
         this.id = id;
         this.name = name;
         this.score = score;
-        this.clazzId = clazzId;
+        this.clazz = clazz;
     }
 
     public int getId() {
@@ -40,11 +53,11 @@ public class Student {
         this.score = score;
     }
 
-    public int getClazzId() {
-        return clazzId;
+    public Clazz getClazz() {
+        return clazz;
     }
 
-    public void setClazzId(int clazzId) {
-        this.clazzId = clazzId;
+    public void setClazz(Clazz clazz) {
+        this.clazz = clazz;
     }
 }

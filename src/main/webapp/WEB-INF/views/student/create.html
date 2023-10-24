@@ -19,12 +19,12 @@
         </div>
         <div class="mb-3">
             <label th:for="clazzId" class="form-label">Lớp</label>
-            <select class="form-select" th:field="*{clazzId}">
+            <select class="form-select" th:field="*{clazz.id}">
                 <option value="">Chọn lớp</option>
-                <option th:each="clazz: ${clazzList}"
-                        th:value="${clazz.id}" th:text="${clazz.name}">Chọn lớp</option>
+                <option th:each="item: ${clazzList}"
+                        th:value="${item.id}" th:text="${item.name}">Chọn lớp</option>
             </select>
-            <p class="text-danger"  th:errors="*{clazzId}"></p>
+            <p class="text-danger"  th:errors="*{clazz.id}"></p>
         </div>
         <button type="submit" class="btn btn-primary">Lưu</button>
     </form>
